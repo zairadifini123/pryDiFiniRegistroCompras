@@ -56,8 +56,8 @@ namespace pryDiFiniRegistroCompras
             vPrecioUnitario = Convert.ToInt32(mtbPrecioUnitario.Text);
 
             lblResultado.Text =
-                vFecha.ToString() + " - " + vProducto.ToString() + "" +
-                + vCantidad.ToString() + " - " 
+                vFecha.ToString() + " - " + " Producto: " + vProducto.ToString() + "  Cantidad: "
+                + vCantidad.ToString() + " - " + " $ "
                 + vPrecioUnitario.ToString();
 
         }
