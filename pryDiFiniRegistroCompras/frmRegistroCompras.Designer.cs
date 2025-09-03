@@ -45,7 +45,7 @@
             // 
             lblRegistroCompras.AutoSize = true;
             lblRegistroCompras.Font = new Font("Segoe UI", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblRegistroCompras.Location = new Point(146, 30);
+            lblRegistroCompras.Location = new Point(113, 9);
             lblRegistroCompras.Name = "lblRegistroCompras";
             lblRegistroCompras.Size = new Size(307, 47);
             lblRegistroCompras.TabIndex = 0;
@@ -80,16 +80,17 @@
             // lblCantidad
             // 
             lblCantidad.AutoSize = true;
-            lblCantidad.Location = new Point(229, 127);
+            lblCantidad.Location = new Point(51, 166);
             lblCantidad.Name = "lblCantidad";
             lblCantidad.Size = new Size(55, 15);
             lblCantidad.TabIndex = 5;
             lblCantidad.Text = "Cantidad";
+            lblCantidad.Click += lblCantidad_Click;
             // 
             // lblPrecioUnitario
             // 
             lblPrecioUnitario.AutoSize = true;
-            lblPrecioUnitario.Location = new Point(349, 91);
+            lblPrecioUnitario.Location = new Point(42, 203);
             lblPrecioUnitario.Name = "lblPrecioUnitario";
             lblPrecioUnitario.Size = new Size(84, 15);
             lblPrecioUnitario.TabIndex = 7;
@@ -97,23 +98,25 @@
             // 
             // btnRegistrar
             // 
-            btnRegistrar.Location = new Point(242, 165);
+            btnRegistrar.Location = new Point(390, 199);
             btnRegistrar.Name = "btnRegistrar";
             btnRegistrar.Size = new Size(75, 23);
             btnRegistrar.TabIndex = 9;
             btnRegistrar.Text = "Registrar";
             btnRegistrar.UseVisualStyleBackColor = true;
+
             // 
             // nudCantidad
             // 
-            nudCantidad.Location = new Point(290, 124);
+            nudCantidad.Location = new Point(112, 163);
             nudCantidad.Name = "nudCantidad";
             nudCantidad.Size = new Size(120, 23);
             nudCantidad.TabIndex = 10;
+
             // 
             // mtbPrecioUnitario
             // 
-            mtbPrecioUnitario.Location = new Point(439, 88);
+            mtbPrecioUnitario.Location = new Point(132, 200);
             mtbPrecioUnitario.Mask = "000000";
             mtbPrecioUnitario.Name = "mtbPrecioUnitario";
             mtbPrecioUnitario.Size = new Size(100, 23);

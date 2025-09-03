@@ -11,5 +11,10 @@ namespace pryDiFiniRegistroCompras
         {
 
         }
+
+        private void lblCantidad_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
