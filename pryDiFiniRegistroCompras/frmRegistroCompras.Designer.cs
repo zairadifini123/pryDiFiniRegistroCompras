@@ -30,7 +30,7 @@
         {
             lblRegistroCompras = new Label();
             lblFecha = new Label();
-            dtp = new DateTimePicker();
+            dtpFecha = new DateTimePicker();
             lblProducto = new Label();
             lblCantidad = new Label();
             lblPrecioUnitario = new Label();
@@ -44,11 +44,11 @@
             // 
             // lblRegistroCompras
             // 
-            lblRegistroCompras.AutoSize = true;
+            lblRegistroCompras.BackColor = SystemColors.ActiveCaption;
             lblRegistroCompras.Font = new Font("Segoe UI", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblRegistroCompras.Location = new Point(50, 18);
+            lblRegistroCompras.Location = new Point(-2, 0);
             lblRegistroCompras.Name = "lblRegistroCompras";
-            lblRegistroCompras.Size = new Size(307, 47);
+            lblRegistroCompras.Size = new Size(389, 55);
             lblRegistroCompras.TabIndex = 0;
             lblRegistroCompras.Text = "Registro compras";
             lblRegistroCompras.Click += label1_Click;
@@ -56,18 +56,20 @@
             // lblFecha
             // 
             lblFecha.AutoSize = true;
-            lblFecha.Location = new Point(51, 74);
+            lblFecha.ForeColor = SystemColors.ControlText;
+            lblFecha.Location = new Point(50, 74);
             lblFecha.Name = "lblFecha";
             lblFecha.Size = new Size(38, 15);
             lblFecha.TabIndex = 1;
             lblFecha.Text = "Fecha";
             // 
-            // dtp
+            // dtpFecha
             // 
-            dtp.Location = new Point(111, 68);
-            dtp.Name = "dtp";
-            dtp.Size = new Size(223, 23);
-            dtp.TabIndex = 2;
+            dtpFecha.Location = new Point(111, 68);
+            dtpFecha.Name = "dtpFecha";
+            dtpFecha.Size = new Size(223, 23);
+            dtpFecha.TabIndex = 2;
+            dtpFecha.ValueChanged += dtp_ValueChanged;
             // 
             // lblProducto
             // 
@@ -99,35 +101,43 @@
             // 
             // btnRegistrar
             // 
+            btnRegistrar.Enabled = false;
             btnRegistrar.Location = new Point(75, 177);
             btnRegistrar.Name = "btnRegistrar";
             btnRegistrar.Size = new Size(75, 23);
             btnRegistrar.TabIndex = 9;
             btnRegistrar.Text = "Registrar";
             btnRegistrar.UseVisualStyleBackColor = true;
+            btnRegistrar.Click += btnRegistrar_Click;
             // 
             // nudCantidad
             // 
+            nudCantidad.Enabled = false;
             nudCantidad.Location = new Point(112, 148);
             nudCantidad.Name = "nudCantidad";
             nudCantidad.Size = new Size(67, 23);
             nudCantidad.TabIndex = 10;
+            nudCantidad.ValueChanged += nudCantidad_ValueChanged;
             // 
             // mtbPrecioUnitario
             // 
+            mtbPrecioUnitario.Enabled = false;
             mtbPrecioUnitario.Location = new Point(275, 150);
             mtbPrecioUnitario.Mask = "000000";
             mtbPrecioUnitario.Name = "mtbPrecioUnitario";
             mtbPrecioUnitario.Size = new Size(38, 23);
             mtbPrecioUnitario.TabIndex = 11;
+            mtbPrecioUnitario.MaskInputRejected += mtbPrecioUnitario_MaskInputRejected;
             // 
             // cmbProductos
             // 
             cmbProductos.FormattingEnabled = true;
+            cmbProductos.Items.AddRange(new object[] { "Papa", "Lechuga", "Tomate" });
             cmbProductos.Location = new Point(111, 107);
             cmbProductos.Name = "cmbProductos";
             cmbProductos.Size = new Size(223, 23);
             cmbProductos.TabIndex = 12;
+            cmbProductos.SelectedIndexChanged += cmbProductos_SelectedIndexChanged;
             // 
             // btnSalir
             // 
@@ -137,11 +147,13 @@
             btnSalir.TabIndex = 13;
             btnSalir.Text = "Salir";
             btnSalir.UseVisualStyleBackColor = true;
+            btnSalir.Click += btnSalir_Click;
             // 
             // FrmRegistroCompras
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.GradientInactiveCaption;
             ClientSize = new Size(386, 287);
             Controls.Add(btnSalir);
             Controls.Add(cmbProductos);
@@ -151,7 +163,7 @@
             Controls.Add(lblPrecioUnitario);
             Controls.Add(lblCantidad);
             Controls.Add(lblProducto);
-            Controls.Add(dtp);
+            Controls.Add(dtpFecha);
             Controls.Add(lblFecha);
             Controls.Add(lblRegistroCompras);
             Name = "FrmRegistroCompras";
@@ -165,7 +177,7 @@
 
         private Label lblRegistroCompras;
         private Label lblFecha;
-        private DateTimePicker dtp;
+        private DateTimePicker dtpFecha;
         private Label lblProducto;
         private TextBox txtCantidad;
         private Label lblCantidad;
