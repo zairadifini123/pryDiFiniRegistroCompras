@@ -39,6 +39,7 @@
             mtbPrecioUnitario = new MaskedTextBox();
             cmbProductos = new ComboBox();
             btnSalir = new Button();
+            lblResultado = new Label();
             ((System.ComponentModel.ISupportInitialize)nudCantidad).BeginInit();
             SuspendLayout();
             // 
@@ -102,9 +103,9 @@
             // btnRegistrar
             // 
             btnRegistrar.Enabled = false;
-            btnRegistrar.Location = new Point(75, 177);
+            btnRegistrar.Location = new Point(210, 188);
             btnRegistrar.Name = "btnRegistrar";
-            btnRegistrar.Size = new Size(75, 23);
+            btnRegistrar.Size = new Size(124, 23);
             btnRegistrar.TabIndex = 9;
             btnRegistrar.Text = "Registrar";
             btnRegistrar.UseVisualStyleBackColor = true;
@@ -141,20 +142,33 @@
             // 
             // btnSalir
             // 
-            btnSalir.Location = new Point(209, 179);
+            btnSalir.Location = new Point(80, 188);
             btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(75, 23);
+            btnSalir.Size = new Size(124, 23);
             btnSalir.TabIndex = 13;
             btnSalir.Text = "Salir";
             btnSalir.UseVisualStyleBackColor = true;
             btnSalir.Click += btnSalir_Click;
+            // 
+            // lblResultado
+            // 
+            lblResultado.AutoSize = true;
+            lblResultado.BackColor = SystemColors.Control;
+            lblResultado.BorderStyle = BorderStyle.Fixed3D;
+            lblResultado.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblResultado.Location = new Point(49, 231);
+            lblResultado.Name = "lblResultado";
+            lblResultado.Size = new Size(129, 34);
+            lblResultado.TabIndex = 14;
+            lblResultado.Text = "Resultado";
             // 
             // FrmRegistroCompras
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientInactiveCaption;
-            ClientSize = new Size(386, 287);
+            ClientSize = new Size(386, 373);
+            Controls.Add(lblResultado);
             Controls.Add(btnSalir);
             Controls.Add(cmbProductos);
             Controls.Add(mtbPrecioUnitario);
@@ -188,5 +202,6 @@
         private MaskedTextBox mtbPrecioUnitario;
         private ComboBox cmbProductos;
         private Button btnSalir;
+        private Label lblResultado;
     }
 }

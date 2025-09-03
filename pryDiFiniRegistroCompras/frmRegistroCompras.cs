@@ -43,9 +43,23 @@ namespace pryDiFiniRegistroCompras
                 mtbPrecioUnitario.Enabled = false;
         }
 
+        DateTime vFecha;
+        string vProducto;
+        int vCantidad;
+        int vPrecioUnitario;
+
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            
+            vFecha = dtpFecha.Value;
+            vProducto = cmbProductos.Text;
+            vCantidad = Convert.ToInt32(nudCantidad.Value);
+            vPrecioUnitario = Convert.ToInt32(mtbPrecioUnitario.Text);
+
+            lblResultado.Text =
+                vFecha.ToString() + " - " + vProducto.ToString() + "" +
+                + vCantidad.ToString() + " - " 
+                + vPrecioUnitario.ToString();
+
         }
 
         private void mtbPrecioUnitario_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
