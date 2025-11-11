@@ -39,7 +39,7 @@
             mtbPrecioUnitario = new MaskedTextBox();
             cmbProductos = new ComboBox();
             btnSalir = new Button();
-            lblResultado = new Label();
+            lstResultados = new ListBox();
             ((System.ComponentModel.ISupportInitialize)nudCantidad).BeginInit();
             SuspendLayout();
             // 
@@ -52,13 +52,12 @@
             lblRegistroCompras.Size = new Size(640, 55);
             lblRegistroCompras.TabIndex = 0;
             lblRegistroCompras.Text = "Registro compras";
-            lblRegistroCompras.Click += label1_Click;
             // 
             // lblFecha
             // 
             lblFecha.AutoSize = true;
             lblFecha.ForeColor = SystemColors.ControlText;
-            lblFecha.Location = new Point(50, 74);
+            lblFecha.Location = new Point(12, 76);
             lblFecha.Name = "lblFecha";
             lblFecha.Size = new Size(38, 15);
             lblFecha.TabIndex = 1;
@@ -67,16 +66,15 @@
             // dtpFecha
             // 
             dtpFecha.Format = DateTimePickerFormat.Short;
-            dtpFecha.Location = new Point(111, 68);
+            dtpFecha.Location = new Point(56, 74);
             dtpFecha.Name = "dtpFecha";
             dtpFecha.Size = new Size(82, 23);
             dtpFecha.TabIndex = 2;
-            dtpFecha.ValueChanged += dtp_ValueChanged;
             // 
             // lblProducto
             // 
             lblProducto.AutoSize = true;
-            lblProducto.Location = new Point(49, 110);
+            lblProducto.Location = new Point(12, 110);
             lblProducto.Name = "lblProducto";
             lblProducto.Size = new Size(56, 15);
             lblProducto.TabIndex = 3;
@@ -85,17 +83,16 @@
             // lblCantidad
             // 
             lblCantidad.AutoSize = true;
-            lblCantidad.Location = new Point(350, 74);
+            lblCantidad.Location = new Point(13, 148);
             lblCantidad.Name = "lblCantidad";
             lblCantidad.Size = new Size(55, 15);
             lblCantidad.TabIndex = 5;
             lblCantidad.Text = "Cantidad";
-            lblCantidad.Click += lblCantidad_Click;
             // 
             // lblPrecioUnitario
             // 
             lblPrecioUnitario.AutoSize = true;
-            lblPrecioUnitario.Location = new Point(350, 110);
+            lblPrecioUnitario.Location = new Point(13, 188);
             lblPrecioUnitario.Name = "lblPrecioUnitario";
             lblPrecioUnitario.Size = new Size(84, 15);
             lblPrecioUnitario.TabIndex = 7;
@@ -104,7 +101,7 @@
             // btnRegistrar
             // 
             btnRegistrar.Enabled = false;
-            btnRegistrar.Location = new Point(310, 149);
+            btnRegistrar.Location = new Point(180, 228);
             btnRegistrar.Name = "btnRegistrar";
             btnRegistrar.Size = new Size(124, 23);
             btnRegistrar.TabIndex = 9;
@@ -115,7 +112,7 @@
             // nudCantidad
             // 
             nudCantidad.Enabled = false;
-            nudCantidad.Location = new Point(413, 72);
+            nudCantidad.Location = new Point(74, 146);
             nudCantidad.Name = "nudCantidad";
             nudCantidad.Size = new Size(67, 23);
             nudCantidad.TabIndex = 10;
@@ -124,18 +121,18 @@
             // mtbPrecioUnitario
             // 
             mtbPrecioUnitario.Enabled = false;
-            mtbPrecioUnitario.Location = new Point(440, 110);
+            mtbPrecioUnitario.Location = new Point(103, 188);
             mtbPrecioUnitario.Mask = "000000";
             mtbPrecioUnitario.Name = "mtbPrecioUnitario";
             mtbPrecioUnitario.Size = new Size(38, 23);
             mtbPrecioUnitario.TabIndex = 11;
-            mtbPrecioUnitario.MaskInputRejected += mtbPrecioUnitario_MaskInputRejected;
             // 
             // cmbProductos
             // 
+            cmbProductos.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbProductos.FormattingEnabled = true;
             cmbProductos.Items.AddRange(new object[] { "Papa", "Lechuga", "Tomate" });
-            cmbProductos.Location = new Point(111, 107);
+            cmbProductos.Location = new Point(74, 107);
             cmbProductos.Name = "cmbProductos";
             cmbProductos.Size = new Size(223, 23);
             cmbProductos.TabIndex = 12;
@@ -143,7 +140,7 @@
             // 
             // btnSalir
             // 
-            btnSalir.Location = new Point(180, 149);
+            btnSalir.Location = new Point(12, 228);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(124, 23);
             btnSalir.TabIndex = 13;
@@ -151,25 +148,22 @@
             btnSalir.UseVisualStyleBackColor = true;
             btnSalir.Click += btnSalir_Click;
             // 
-            // lblResultado
+            // lstResultados
             // 
-            lblResultado.AutoSize = true;
-            lblResultado.BackColor = SystemColors.Control;
-            lblResultado.BorderStyle = BorderStyle.Fixed3D;
-            lblResultado.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblResultado.Location = new Point(49, 225);
-            lblResultado.Name = "lblResultado";
-            lblResultado.Size = new Size(36, 34);
-            lblResultado.TabIndex = 14;
-            lblResultado.Text = "--";
+            lstResultados.FormattingEnabled = true;
+            lstResultados.ItemHeight = 15;
+            lstResultados.Location = new Point(12, 257);
+            lstResultados.Name = "lstResultados";
+            lstResultados.Size = new Size(292, 94);
+            lstResultados.TabIndex = 14;
             // 
             // FrmRegistroCompras
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientInactiveCaption;
-            ClientSize = new Size(638, 373);
-            Controls.Add(lblResultado);
+            ClientSize = new Size(321, 373);
+            Controls.Add(lstResultados);
             Controls.Add(btnSalir);
             Controls.Add(cmbProductos);
             Controls.Add(mtbPrecioUnitario);
@@ -181,8 +175,12 @@
             Controls.Add(dtpFecha);
             Controls.Add(lblFecha);
             Controls.Add(lblRegistroCompras);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            MaximizeBox = false;
             Name = "FrmRegistroCompras";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "RegistroCompras";
+
             ((System.ComponentModel.ISupportInitialize)nudCantidad).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -203,6 +201,6 @@
         private MaskedTextBox mtbPrecioUnitario;
         private ComboBox cmbProductos;
         private Button btnSalir;
-        private Label lblResultado;
+        private ListBox lstResultados;
     }
 }
