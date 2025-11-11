@@ -126,6 +126,7 @@
             mtbPrecioUnitario.Name = "mtbPrecioUnitario";
             mtbPrecioUnitario.Size = new Size(38, 23);
             mtbPrecioUnitario.TabIndex = 11;
+            mtbPrecioUnitario.TextChanged += mtbPrecioUnitario_TextChanged;
             // 
             // cmbProductos
             // 
@@ -180,7 +181,6 @@
             Name = "FrmRegistroCompras";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "RegistroCompras";
-
             ((System.ComponentModel.ISupportInitialize)nudCantidad).EndInit();
             ResumeLayout(false);
             PerformLayout();
